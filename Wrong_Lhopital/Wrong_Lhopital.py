@@ -10,9 +10,9 @@ config = global_config.copy()
 config.frame_height = 1920
 config.frame_width = 1080
 
-# manim -pql Wrong_Lhospital.py Wrong_Lhospital -r 1080,1920
+# manim -pql Wrong_Lhopital.py Wrong_Lhopital -r 1080,1920
 
-class Wrong_Lhospital(Scene):
+class Wrong_Lhopital(Scene):
     def construct(self):
         
         background = ImageMobject("/Users/anaemiliadeorellana/Documents/Personales/Problemathic/Manim/Reel.png")
@@ -21,7 +21,7 @@ class Wrong_Lhospital(Scene):
         title = Text('Problemathic', font_size=130, font='Chalkduster')
 
         title2 = Text('Let\'s study a common error in applying', font_size=60).shift(UP)
-        title2_1 = Text('L\'hostpital\'s Rule', font_size=60)
+        title2_1 = Text('L\'hôpital\'s Rule', font_size=60)
 
 
         title3 = Text('Find the error in the following limit').shift(UP*4)
@@ -37,7 +37,7 @@ class Wrong_Lhospital(Scene):
         equation = Tex(expression).scale(1.6)
 
         spotText = Text('Did you spot it?', font_size = 50).shift(DOWN*7)
-        plotText = Text('Let\'s look at the plot', font_size = 50).shift(DOWN*8)
+        plotText = Text('Let\'s plot the initial function', font_size = 50).shift(DOWN*8)
 
         axes = Axes(
             x_range=[-2, 1.2, 1],
@@ -83,7 +83,7 @@ class Wrong_Lhospital(Scene):
 
         
         eqq = MathTex(r'\lim_{x\to1}\frac{3x^2 + 1}{2x - 3} = -4', color=GREEN_B).scale(1.6).shift(6*DOWN)
-        solution2 = Text('The error was aplying L\'hospital\'s Rule twice!').shift(8*DOWN)
+        solution2 = Text('The error was aplying L\'hôpital\'s Rule twice!').shift(8*DOWN)
 
         self.play(Write(title))
         self.wait(0.2)
