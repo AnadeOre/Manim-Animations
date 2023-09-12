@@ -27,8 +27,6 @@ class Euler(Scene):
         axes = ComplexPlane(
             x_range=[-2, 2],
             y_range=[-2, 2],
-            # height=6.0,  # Adjust the height as needed
-            # width=6.0,   # Adjust the width as needed
             axis_config={"color": BLACK},
         )
         axes.scale(3)
@@ -37,7 +35,6 @@ class Euler(Scene):
         circle = Circle(radius=3, color=WHITE)
         circle.move_to(axes.get_center())
 
-        # Create a point at (1, 0) and a point on the circle
         center = Dot(ORIGIN, color=RED)
         point_on_circle = Dot(circle.point_from_proportion(0.5), color=BLUE)
 
@@ -57,13 +54,10 @@ class Euler(Scene):
             color=YELLOW,
         )
 
-        # Create a line connecting the center and the point on the circle
         line = Line(center.get_center(),
                     point_on_circle.get_center(), color=GREEN)
 
         group = VGroup(circle, center, point_on_circle, arc, line)
-
-        # Add everything to the scene
         self.add(axes, group)
 
         decimal = DecimalNumber(
@@ -71,8 +65,6 @@ class Euler(Scene):
             show_ellipsis=True,
             num_decimal_places=3,
         )
-
-        # Animate the point moving around the circle and increasing the angle
 
         def update_elements(mob):
             angle = np.angle(complex(*point_on_circle.get_center()[:2]))
